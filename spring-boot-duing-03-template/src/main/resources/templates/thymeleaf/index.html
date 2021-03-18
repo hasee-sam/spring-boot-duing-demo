@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--变量表达式： ${...}-->
+    <div>
+        <p th:text="${restaurant.boss}">boss</p>
+        <p th:text="${restaurant.chef}">chef</p>
+    </div>
+    <!--选择变量表达式： *{...}-->
+    <div th:object="${restaurant}">
+        <p>boss: <span th:text="*{boss}">boss</span>.</p>
+        <p>chef: <span th:text="${restaurant.chef}">chef</span>.</p>
+    </div>
+    <!--链接url表达式： @{...}-->
+    <a href="welcome.html" th:href="@{/welcome}">welcome</a>
+    <!--消息表达式： #{...} 用于显示页面静态文本，将静态文本维护在properties文件中-->
+    <p th:utext="#{something}"> Welcome to our country</p>
+
+    <!--片段表达式： ~{...} 最常见的是使用th:insert或th:replace来插入片段-->
+    <div th:insert="footer :: copy"></div>
+    <div th:replace="footer :: copy"></div>
+    <div th:include="footer :: copy"></div>
+</body>
+</html>

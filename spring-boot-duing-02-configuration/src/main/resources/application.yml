@@ -1,0 +1,9 @@
+info:
+  username: ENC(sHbLPxdJ/+b2u1sKkIYBpg==)
+  password: ENC(v/vFhZP5tNz74ZNcbnpdDw==)
+
+jasypt:
+  encryptor:
+    password: 123456@!
+server:
+  port: 8090
